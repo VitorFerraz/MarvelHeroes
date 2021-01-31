@@ -1,7 +1,9 @@
 import UIKit
 
 protocol DetailsViewControllerProtocol: AnyObject {
-    func showCharacterDetails(viewModel: CharactersViewModel)
+    func showCharacterDetails(viewModel: CharactersViewModel, isFavorite: Bool)
+    func updateFavorite(isFavorite: Bool)
+
 }
 
 
@@ -51,13 +53,32 @@ final class DetailsViewController: ViewController {
                               trailing: view.trailingAnchor)
         
     }
+    
+    override func configureViews() {
+        navigationItem.rightBarButtonItem = .init(image: #imageLiteral(resourceName: "icon_favorite_no_selected").withRenderingMode(.alwaysOriginal), style: UIBarButtonItem.Style.done, target: self, action: #selector(favoriteButtonTapped))
+    }
+    
+    @objc func favoriteButtonTapped() {
+        presenter?.toogleFavorite()
+    }
+    
+    func updateBarButton(isFavorite: Bool) {
+        let image = isFavorite ?  #imageLiteral(resourceName: "icon_favorite_selected").withRenderingMode(.alwaysOriginal) :  #imageLiteral(resourceName: "icon_favorite_no_selected").withRenderingMode(.alwaysOriginal)
+        navigationItem.rightBarButtonItem = .init(image: image, style: UIBarButtonItem.Style.done, target: self, action: #selector(favoriteButtonTapped))
+
+    }
 
 }
 
 extension DetailsViewController: DetailsViewControllerProtocol {
-    func showCharacterDetails(viewModel: CharactersViewModel) {
+    func updateFavorite(isFavorite: Bool) {
+        updateBarButton(isFavorite: isFavorite)
+    }
+    
+    func showCharacterDetails(viewModel: CharactersViewModel, isFavorite: Bool) {
         titleLabel.text = viewModel.name
         descriptionLabel.text = viewModel.description
         characterImageView.setImageFrom(url: viewModel.thumbnail)
+        updateBarButton(isFavorite: isFavorite)
     }
 }

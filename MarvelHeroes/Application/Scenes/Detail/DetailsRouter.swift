@@ -13,6 +13,7 @@ class DetailsRouter: Router {
         let interactor  = DetailsInteractor()
         let presenter  = DetailsPresenter(interactor, router)
         presenter.viewModel = viewModel
+        interactor.output = presenter
         viewController.presenter = presenter
         presenter.view = viewController
         return viewController

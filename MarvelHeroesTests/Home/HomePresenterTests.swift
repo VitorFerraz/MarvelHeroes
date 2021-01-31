@@ -15,7 +15,7 @@ final class HomePresenterTests: QuickSpec {
             
             context("when user search a name") {
                 it("should return a list of heroes matching the search") {
-                    homeInteractorMock.characters = [.init(id: 0, name: "iron man", characterDescription: "", modified: nil, resourceURI: nil)]
+                    homeInteractorMock.characters = [.init(id: 0, name: "iron man", description: "", modified: nil, resourceURI: nil)]
                     
                     sut.performSearch(by: "iron man")
                     
@@ -28,7 +28,7 @@ final class HomePresenterTests: QuickSpec {
             
             context("when user clears search") {
                 it("should clear the search or fetch values") {
-                    homeInteractorMock.characters = [.init(id: 0, name: "iron man", characterDescription: "", modified: nil, resourceURI: nil)]
+                    homeInteractorMock.characters = [.init(id: 0, name: "iron man", description: "", modified: nil, resourceURI: nil)]
                     
                     sut.clearSearch()
                     
@@ -38,7 +38,7 @@ final class HomePresenterTests: QuickSpec {
             
             context("get hero from a valid position") {
                 it("should return a hero") {
-                    homeInteractorMock.characters = [.init(id: 0, name: "iron man", characterDescription: "", modified: nil, resourceURI: nil)]
+                    homeInteractorMock.characters = [.init(id: 0, name: "iron man", description: "", modified: nil, resourceURI: nil)]
                     sut.performSearch(by: "iron man")
                     let heroe = sut.charactersFor(rowAt: 0)
                     
@@ -48,7 +48,7 @@ final class HomePresenterTests: QuickSpec {
             
             context("get hero from a invalid position") {
                 it("should return nothing") {
-                    homeInteractorMock.characters = [.init(id: 0, name: "iron man", characterDescription: "", modified: nil, resourceURI: nil)]
+                    homeInteractorMock.characters = [.init(id: 0, name: "iron man", description: "", modified: nil, resourceURI: nil)]
                     sut.performSearch(by: "iron man")
 
                     let heroe = sut.charactersFor(rowAt: -1)
@@ -79,5 +79,6 @@ final class HomePresenterTests: QuickSpec {
                 output?.charactersDidFetch(characters: characters)
             }
         }
+
     }
 }

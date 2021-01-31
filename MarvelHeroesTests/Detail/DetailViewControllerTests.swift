@@ -4,39 +4,35 @@ import Quick
 import Nimble
 @testable import MarvelHeroes
 
-class HomeViewControllerTests: QuickSpec {
+class DetailsViewControllerTests: QuickSpec {
     var characterMockRepository: CharacterMockRepository!
-
 
     override func spec() {
 
-        describe("Snapshot HomeViewController Test") {
+        describe("Snapshot DetailsViewController Test") {
             beforeEach {
                 self.characterMockRepository = CharacterMockRepository()
 
             }
             context("in multiple languages") {
                 context("and multiple devices") {
-                    it("show the heroes list") {
-                        let characters = [Character(id: 0,
-                                                    name: "teste",
-                                                    characterDescription: "teste",
-                                                    modified: nil,
-                                                    resourceURI: "")]
-                        
-                        
-                        self.characterMockRepository.result = .some(.init(offset: 0, limit: 0, total: 0, count: 0, results: characters))
-                        
+                    it("shows the hero details with title and description") {
+                       
                         let devices: [(String, ViewImageConfig)] = [("iPhoneX", .iPhoneX),
                                                                     ("iPhoneXr", .iPhoneXr),
                                                                     ("iPhoneXsMax", .iPhoneXsMax)]
                         //Used for SwiftUI
                         let languages: [Locale] = [Locale(identifier: "pt-br"),
                                                    Locale(identifier: "en")]
-
+                        
+                        let viewModel = CharactersViewModel(character: Character(id: 0,
+                                                                                 name: "teste",
+                                                                                 description: "teste",
+                                                                                 modified: nil,
+                                                                                 resourceURI: ""))
                         languages.forEach { (language) in
                             devices.forEach { device in
-                                let root = HomeRouter.viewController(repository: CharacterMockRepository())
+                                let root = DetailsRouter.viewController(viewModel: viewModel, repository: CharacterMockRepository())
                                 root.loadViewIfNeeded()
                                 let named = "Device-\(device.0)-Language-\(language)"
                                 let expectation = XCTestExpectation(description: named)
@@ -69,12 +65,5 @@ class HomeViewControllerTests: QuickSpec {
             }
         }
     }
-}
-
-
-
-func putInViewHierarchy(_ vc: UIViewController) {
-    let window = UIApplication.shared.windows.first!
-    window.rootViewController = vc
 }
 

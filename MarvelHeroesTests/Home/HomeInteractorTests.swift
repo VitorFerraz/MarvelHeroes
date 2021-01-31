@@ -20,7 +20,7 @@ final class HomeInteractorTests: QuickSpec {
                 it("should return a list of Character") {
                     let characters = [Character(id: 0,
                                                 name: "teste",
-                                                characterDescription: "teste",
+                                                description: "teste",
                                                 modified: nil,
                                                 resourceURI: "")]
                     
