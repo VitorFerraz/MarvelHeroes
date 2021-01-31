@@ -1,6 +1,6 @@
 import UIKit
 
-class CustomSearchBar: UISearchBar {
+class SearchBar: UISearchBar {
 
     var customFont: UIFont = StyleGuide.SearchBar.font
     var customTextColor: UIColor = StyleGuide.SearchBar.textColor

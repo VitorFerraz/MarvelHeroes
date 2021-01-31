@@ -11,9 +11,9 @@ final class HomePresenter: Presenter, HomePresenterProtocol {
     var interactor: HomeInteractorProtocol
     var router: HomeRouter
     weak var view: HomeViewControllerProtocol?
-    private var charactersViewModel: [CharactersViewModel] = [] {
+    private(set) var charactersViewModel: [CharactersViewModel] = [] {
         didSet {
-            charactersViewModel.isEmpty ? view?.showEmpty() : view?.showCharacters(viewModels: self.charactersViewModel)
+            charactersViewModel.isEmpty ? view?.showEmpty() : view?.showCharacters()
         }
     }
     typealias Interactor = HomeInteractorProtocol
@@ -29,7 +29,7 @@ final class HomePresenter: Presenter, HomePresenterProtocol {
     }
     
     func performSearch(by name: String) {
-        interactor.fetchCharacters(by: name, by: .recentlyModified, offset: 0, limit: 100)
+        interactor.fetchCharacters(by: name, by: .none, offset: 0, limit: 100)
     }
     
     func clearSearch() {
@@ -43,8 +43,22 @@ final class HomePresenter: Presenter, HomePresenterProtocol {
     
 }
 
-struct CharactersViewModel {
+struct CharactersViewModel: Hashable {
     var character: Character
+    var name: String {
+        character.name
+    }
+    
+    var thumbnail: String? {
+        character.thumbnail?.url
+    }
+    func hash(into hasher: inout Hasher) {
+      hasher.combine(character)
+    }
+
+    static func == (lhs: CharactersViewModel, rhs: CharactersViewModel) -> Bool {
+        lhs.character.name == rhs.character.name
+    }
 }
 
 extension HomePresenter: HomeInteractorOutputProtocol {

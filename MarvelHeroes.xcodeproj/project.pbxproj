@@ -39,6 +39,12 @@
 		90AFDAFB25C3807A00E3F2FA /* CharacterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AFDAFA25C3807A00E3F2FA /* CharacterService.swift */; };
 		90D008F325C6FF6D00407A2C /* StyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D008F225C6FF6D00407A2C /* StyleGuide.swift */; };
 		90D008F925C6FFAA00407A2C /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D008F825C6FFAA00407A2C /* SearchBar.swift */; };
+		90D0090B25C7016B00407A2C /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D0090A25C7016B00407A2C /* UIView+Constraints.swift */; };
+		90D0091725C710B200407A2C /* CardCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D0091625C710B200407A2C /* CardCollectionCell.swift */; };
+		90D0091C25C710C900407A2C /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D0091B25C710C900407A2C /* CollectionViewCell.swift */; };
+		90D0092125C7124000407A2C /* UIViewControler+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D0092025C7124000407A2C /* UIViewControler+Alert.swift */; };
+		90D0092625C713C600407A2C /* Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D0092525C713C600407A2C /* Thumbnail.swift */; };
+		90D0092B25C7149600407A2C /* UIImageView+SetUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D0092A25C7149600407A2C /* UIImageView+SetUrl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +106,12 @@
 		90AFDAFA25C3807A00E3F2FA /* CharacterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterService.swift; sourceTree = "<group>"; };
 		90D008F225C6FF6D00407A2C /* StyleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleGuide.swift; sourceTree = "<group>"; };
 		90D008F825C6FFAA00407A2C /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		90D0090A25C7016B00407A2C /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
+		90D0091625C710B200407A2C /* CardCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionCell.swift; sourceTree = "<group>"; };
+		90D0091B25C710C900407A2C /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		90D0092025C7124000407A2C /* UIViewControler+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewControler+Alert.swift"; sourceTree = "<group>"; };
+		90D0092525C713C600407A2C /* Thumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thumbnail.swift; sourceTree = "<group>"; };
+		90D0092A25C7149600407A2C /* UIImageView+SetUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+SetUrl.swift"; sourceTree = "<group>"; };
 		961B98B0BD5F8B6D1B5F3277 /* Pods_MarvelHeroesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelHeroesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC2406ED638B9E634D08B4CC /* Pods-MarvelHeroesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelHeroesTests.debug.xcconfig"; path = "Target Support Files/Pods-MarvelHeroesTests/Pods-MarvelHeroesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D791E982897D2C610FFCD3E1 /* Pods-MarvelHeroes-MarvelHeroesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelHeroes-MarvelHeroesUITests.debug.xcconfig"; path = "Target Support Files/Pods-MarvelHeroes-MarvelHeroesUITests/Pods-MarvelHeroes-MarvelHeroesUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -245,6 +257,7 @@
 				90A7B17B25C234E100AF1CA1 /* HomePresenter.swift */,
 				9019D62B25C2D02300B08511 /* HomeInteractor.swift */,
 				9019D63025C2D03500B08511 /* HomeRouter.swift */,
+				90D0091625C710B200407A2C /* CardCollectionCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -252,10 +265,15 @@
 		905000D525C233F80061FD27 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				90D0090925C7016200407A2C /* Constraints */,
 				90D008F725C6FF9200407A2C /* Components */,
 				90D008F125C6FF5C00407A2C /* Style */,
 				905000D625C234020061FD27 /* ViewController.swift */,
 				905000DE25C2341E0061FD27 /* ViewConfigurator.swift */,
+				90D0091B25C710C900407A2C /* CollectionViewCell.swift */,
+				90D0092025C7124000407A2C /* UIViewControler+Alert.swift */,
+				90D0092525C713C600407A2C /* Thumbnail.swift */,
+				90D0092A25C7149600407A2C /* UIImageView+SetUrl.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -365,6 +383,14 @@
 				90D008F825C6FFAA00407A2C /* SearchBar.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		90D0090925C7016200407A2C /* Constraints */ = {
+			isa = PBXGroup;
+			children = (
+				90D0090A25C7016B00407A2C /* UIView+Constraints.swift */,
+			);
+			path = Constraints;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -606,12 +632,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				9042C42E25C2321F009C3982 /* ApplicationRouter.swift in Sources */,
+				90D0092B25C7149600407A2C /* UIImageView+SetUrl.swift in Sources */,
 				9019D63125C2D03500B08511 /* HomeRouter.swift in Sources */,
+				90D0092125C7124000407A2C /* UIViewControler+Alert.swift in Sources */,
 				90AFDA6C25C33FDF00E3F2FA /* OrderList.swift in Sources */,
 				9019D62C25C2D02300B08511 /* HomeInteractor.swift in Sources */,
 				90AFDA5A25C33CD800E3F2FA /* CharacterRemoteRepository.swift in Sources */,
 				90D008F925C6FFAA00407A2C /* SearchBar.swift in Sources */,
 				90AFDAF525C375F000E3F2FA /* JSONParameterEncoder.swift in Sources */,
+				90D0091725C710B200407A2C /* CardCollectionCell.swift in Sources */,
+				90D0090B25C7016B00407A2C /* UIView+Constraints.swift in Sources */,
 				90AFDADD25C370C700E3F2FA /* Service.swift in Sources */,
 				9042C3F725C23177009C3982 /* AppDelegate.swift in Sources */,
 				9042C40125C23178009C3982 /* MarvelHeroes.xcdatamodeld in Sources */,
@@ -621,8 +651,10 @@
 				90AFDAE225C3715D00E3F2FA /* NetworkConstants.swift in Sources */,
 				90AFDA5225C33CCD00E3F2FA /* CharacterRepository.swift in Sources */,
 				90AFDAD525C370AD00E3F2FA /* Network.swift in Sources */,
+				90D0092625C713C600407A2C /* Thumbnail.swift in Sources */,
 				9019D61F25C2CFC800B08511 /* Router.swift in Sources */,
 				90D008F325C6FF6D00407A2C /* StyleGuide.swift in Sources */,
+				90D0091C25C710C900407A2C /* CollectionViewCell.swift in Sources */,
 				9042C3F925C23177009C3982 /* SceneDelegate.swift in Sources */,
 				90AFDAFB25C3807A00E3F2FA /* CharacterService.swift in Sources */,
 				905000CE25C233D80061FD27 /* HomeViewController.swift in Sources */,

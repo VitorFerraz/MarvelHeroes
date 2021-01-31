@@ -4,6 +4,7 @@ class ViewController: UIViewController, ViewConfigurator {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         setup()
     }
     
