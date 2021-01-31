@@ -79,9 +79,6 @@ final class HomeInteractorTests: QuickSpec {
             didFoundError = true
             self.error = error
         }
-        
-        
-        
     }
 }
 

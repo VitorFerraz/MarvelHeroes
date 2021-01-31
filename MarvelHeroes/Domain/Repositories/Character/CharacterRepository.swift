@@ -6,7 +6,7 @@ typealias ResultCompletion<T> = (Result<T, Error>) -> Void
 struct Character: Codable {
     var id: Int
     var name: String
-    var characterDescription: String?
+    var description: String?
     var modified: Date?
     var resourceURI: String?
     var thumbnail: Thumbnail?

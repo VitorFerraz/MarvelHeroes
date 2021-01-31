@@ -21,4 +21,9 @@ final class HomeRouter: Router {
         rootViewController.navigationBar.prefersLargeTitles = true
         return rootViewController
     }
+    
+    func presentDetailsScreen(_ viewModel: CharactersViewModel) {
+        let vc = DetailsRouter.viewController(viewModel: viewModel, repository: CharacterRemoteRepository())
+        rootViewController?.navigationController?.pushViewController(vc, animated: true)
+    }
 }

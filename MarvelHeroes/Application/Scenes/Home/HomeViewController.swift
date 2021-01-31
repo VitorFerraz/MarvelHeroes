@@ -93,7 +93,7 @@ final class HomeViewController: ViewController, UICollectionViewDelegateFlowLayo
         guard let characterViewModel = dataSource.itemIdentifier(for: indexPath) else {
           return
         }
-        print(characterViewModel)
+        presenter?.router.presentDetailsScreen(characterViewModel)
     }
     
 }

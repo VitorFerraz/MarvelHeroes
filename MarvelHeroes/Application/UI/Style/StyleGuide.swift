@@ -3,7 +3,7 @@ import UIKit
 
 struct StyleGuide {
     struct SearchBar {
-        static let font: UIFont = .systemFont(ofSize: 16.0)
+        static let font: UIFont = UIFont.preferredFont(forTextStyle: .subheadline)
         static let textColor: UIColor = .white
         static let tintColor: UIColor = .clear
     }
@@ -19,12 +19,14 @@ struct StyleGuide {
     
     struct Colors {
         static var grayTheme: UIColor {
-            return UIColor(hexString: "#3B383D")
+            return UIColor.systemGray
         }
     }
     
     struct CardLabel {
-        static let font: UIFont = .systemFont(ofSize: 17)
+        static let titleFont: UIFont = UIFont.preferredFont(forTextStyle: .title1)
+        static let descriptionFont: UIFont = UIFont.preferredFont(forTextStyle: .body)
+
         static let textColor: UIColor = .white
     }
 }

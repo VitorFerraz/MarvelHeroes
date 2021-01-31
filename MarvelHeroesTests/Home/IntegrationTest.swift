@@ -30,6 +30,7 @@ class HomeViewControllerTests: QuickSpec {
                         let devices: [(String, ViewImageConfig)] = [("iPhoneX", .iPhoneX),
                                                                     ("iPhoneXr", .iPhoneXr),
                                                                     ("iPhoneXsMax", .iPhoneXsMax)]
+                        //Used for SwiftUI
                         let languages: [Locale] = [Locale(identifier: "pt-br"),
                                                    Locale(identifier: "en")]
 

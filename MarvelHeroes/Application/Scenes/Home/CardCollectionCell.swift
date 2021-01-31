@@ -25,7 +25,7 @@ class CardCollectionCell: CollectionViewCell {
     
     var titleLabel: UILabel = {
         let label = UILabel()
-        label.font             = StyleGuide.CardLabel.font
+        label.font             = StyleGuide.CardLabel.titleFont
         label.textColor        = StyleGuide.CardLabel.textColor
         label.numberOfLines    = 2
         label.textAlignment = .center

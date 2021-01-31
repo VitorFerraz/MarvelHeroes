@@ -52,6 +52,11 @@ struct CharactersViewModel: Hashable {
     var thumbnail: String? {
         character.thumbnail?.url
     }
+    
+    var description: String? {
+        character.description
+    }
+    
     func hash(into hasher: inout Hasher) {
       hasher.combine(character)
     }
