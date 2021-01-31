@@ -79,7 +79,5 @@ final class HomePresenterTests: QuickSpec {
                 output?.charactersDidFetch(characters: characters)
             }
         }
-        
-        
     }
 }

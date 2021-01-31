@@ -14,13 +14,15 @@ typealias HomeDataSource = UICollectionViewDiffableDataSource<Section, Character
 typealias HomeSnapshot = NSDiffableDataSourceSnapshot<Section, CharactersViewModel>
 
 
-final class HomeViewController: ViewController, UICollectionViewDelegateFlowLayout {
+final class HomeViewController: ViewController, UICollectionViewDelegateFlowLayout, UICollisionBehaviorDelegate {
+    
     var presenter: HomePresenter?
     private lazy var dataSource = makeDataSource()
     
     private lazy var searchController: UISearchController = {
         let controller = UISearchController()
-        controller.searchBar.placeholder = "Search for a hero..."
+        controller.searchBar.placeholder = NSLocalizedString("Search for a hero",comment: "") + " ..."
+        
         controller.searchBar.delegate = self
         controller.obscuresBackgroundDuringPresentation = false
         return controller
@@ -30,6 +32,7 @@ final class HomeViewController: ViewController, UICollectionViewDelegateFlowLayo
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewFlowLayout)
         collectionView.register(CardCollectionCell.self, forCellWithReuseIdentifier: StyleGuide.CollectionView.itemIdentifier)
         collectionView.backgroundColor = .white
+        collectionView.delegate = self
         return collectionView
     }()
     
@@ -61,7 +64,8 @@ final class HomeViewController: ViewController, UICollectionViewDelegateFlowLayo
     }
     
     override func configureViews() {
-        title = "Choose your hero"
+        
+        title = NSLocalizedString("Choose your hero",comment: "")
     }
     
     func makeDataSource() -> HomeDataSource {
@@ -83,6 +87,13 @@ final class HomeViewController: ViewController, UICollectionViewDelegateFlowLayo
         snapshot.appendSections([.main])
         snapshot.appendItems(presenter?.charactersViewModel ?? [])
         dataSource.apply(snapshot, animatingDifferences: animatingDifferences)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let characterViewModel = dataSource.itemIdentifier(for: indexPath) else {
+          return
+        }
+        print(characterViewModel)
     }
     
 }

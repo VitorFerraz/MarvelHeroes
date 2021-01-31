@@ -15,7 +15,7 @@ final class HomeRouter: Router {
         interactor.output = presenter
         presenter.view = viewController
         viewController.presenter = presenter
-        viewController.tabBarItem = UITabBarItem(title: "Hereos", image: #imageLiteral(resourceName: "icon-iron-man-unselected"), tag: 0)
+        viewController.tabBarItem = UITabBarItem(title: NSLocalizedString("Hereos",comment: ""), image: #imageLiteral(resourceName: "icon-iron-man-unselected"), tag: 0)
         viewController.tabBarItem.selectedImage = #imageLiteral(resourceName: "icon-iron-man").withRenderingMode(.alwaysOriginal)
         let rootViewController : UINavigationController = UINavigationController(rootViewController: viewController)
         rootViewController.navigationBar.prefersLargeTitles = true

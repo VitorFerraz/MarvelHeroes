@@ -7,6 +7,7 @@ target 'MarvelHeroes' do
   def testing_pods
     pod 'Quick'
     pod 'Nimble'
+    pod 'SnapshotTesting'
   end
   # Pods for MarvelHeroes
 
