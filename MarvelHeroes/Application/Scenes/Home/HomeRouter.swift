@@ -15,8 +15,9 @@ final class HomeRouter: Router {
         let presenter  = HomePresenter(interactor, router)
         
         viewController.presenter = presenter
-        viewController.tabBarItem = .init(title: "Hereos", image: nil, tag: 0)
-//        viewController.tabBarItem.selectedImage = nil.withRenderingMode(.alwaysOriginal)
+        viewController.tabBarItem = UITabBarItem(title: "Hereos", image: #imageLiteral(resourceName: "icon-iron-man-unselected"), tag: 0)
+        viewController.tabBarItem.selectedImage = #imageLiteral(resourceName: "icon-iron-man").withRenderingMode(.alwaysOriginal)
+        viewController.title = ""
         let rootViewController : UINavigationController = UINavigationController(rootViewController: viewController)
         
         return rootViewController

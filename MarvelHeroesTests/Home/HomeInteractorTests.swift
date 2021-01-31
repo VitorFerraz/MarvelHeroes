@@ -55,14 +55,13 @@ final class HomeInteractorTests: QuickSpec {
         var result: PaginableResult<Character>?
         var error: Error?
         
-        func fetchCharacters(by name: String?, by order: OrderList?, offset: Int, limit: Int, _ completion: @escaping ResultCompletion<PaginableResult<Character>>) {
+        func fetchCharacters(by name: String?, by order: OrderList?, offset: Int, limit: Int, _ completion: @escaping ResultCompletion<Response<PaginableResult<Character>>>) {
             if let error = error {
                 completion(.failure(error))
             } else if let result = result {
-                completion(.success(result))
+                completion(.success(Response(data: result)))
             }
         }
-        
     }
     
     class HomeInteractorOutputMock: HomeInteractorOutputProtocol {
