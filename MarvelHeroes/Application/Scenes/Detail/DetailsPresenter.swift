@@ -1,6 +1,6 @@
 
 final class DetailsPresenter: Presenter {
-    var interactor: DetailsInteractor
+    var interactor: DetailsInteractorProtocol
     var viewModel: CharactersViewModel?
     var router: DetailsRouter
     
@@ -11,19 +11,17 @@ final class DetailsPresenter: Presenter {
     
     weak var view: DetailsViewControllerProtocol?
     
-    init(_ interactor: DetailsInteractor, _ router: DetailsRouter) {
+    init(_ interactor: DetailsInteractorProtocol, _ router: DetailsRouter) {
         self.interactor = interactor
         self.router = router
     }
     
-    typealias Interactor = DetailsInteractor
+    typealias Interactor = DetailsInteractorProtocol
     typealias Router = DetailsRouter
     
     func onViewDidLoad() {
         guard let viewModel = viewModel else { return }
         interactor.checkFavorite(character: viewModel.character)
-        
-        
     }
     
     func toogleFavorite() {

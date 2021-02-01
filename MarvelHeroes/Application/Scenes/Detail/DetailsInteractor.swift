@@ -2,7 +2,13 @@ protocol DetailInteractorOutputProtocol: AnyObject {
     func showFavorite(entity: CharacterEntity?)
     func removedFavorite()
 }
-class DetailsInteractor {
+
+protocol DetailsInteractorProtocol: AnyObject {
+    func checkFavorite(character: Character)
+    func removeFavorite(entity: CharacterEntity)
+    func addFavority(character: Character)
+}
+class DetailsInteractor: DetailsInteractorProtocol {
     weak var output: DetailInteractorOutputProtocol?
     var repository: FavoriteRepository = FavoriteLocalRepository()
     func checkFavorite(character: Character) {
