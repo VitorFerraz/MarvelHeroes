@@ -58,6 +58,11 @@
 		90D009A925C7590B00407A2C /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D009A825C7590B00407A2C /* DatabaseController.swift */; };
 		90D009AF25C759E700407A2C /* FavoriteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D009AE25C759E700407A2C /* FavoriteRepository.swift */; };
 		90D009B725C75A4D00407A2C /* FavoriteLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D009B625C75A4D00407A2C /* FavoriteLocalRepository.swift */; };
+		90D009BD25C7770600407A2C /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D009BC25C7770600407A2C /* FavoriteViewController.swift */; };
+		90D009C525C7773300407A2C /* FavoritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D009C425C7773300407A2C /* FavoritePresenter.swift */; };
+		90D009CA25C7778E00407A2C /* FavoriteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D009C925C7778E00407A2C /* FavoriteRouter.swift */; };
+		90D009CF25C7781B00407A2C /* FavoriteCardCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D009CE25C7781B00407A2C /* FavoriteCardCollectionCell.swift */; };
+		90D009D425C7797D00407A2C /* FavoriteInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D009D325C7797D00407A2C /* FavoriteInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +144,11 @@
 		90D009A825C7590B00407A2C /* DatabaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
 		90D009AE25C759E700407A2C /* FavoriteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRepository.swift; sourceTree = "<group>"; };
 		90D009B625C75A4D00407A2C /* FavoriteLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteLocalRepository.swift; sourceTree = "<group>"; };
+		90D009BC25C7770600407A2C /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		90D009C425C7773300407A2C /* FavoritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePresenter.swift; sourceTree = "<group>"; };
+		90D009C925C7778E00407A2C /* FavoriteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRouter.swift; sourceTree = "<group>"; };
+		90D009CE25C7781B00407A2C /* FavoriteCardCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCardCollectionCell.swift; sourceTree = "<group>"; };
+		90D009D325C7797D00407A2C /* FavoriteInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteInteractor.swift; sourceTree = "<group>"; };
 		961B98B0BD5F8B6D1B5F3277 /* Pods_MarvelHeroesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelHeroesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC2406ED638B9E634D08B4CC /* Pods-MarvelHeroesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelHeroesTests.debug.xcconfig"; path = "Target Support Files/Pods-MarvelHeroesTests/Pods-MarvelHeroesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D791E982897D2C610FFCD3E1 /* Pods-MarvelHeroes-MarvelHeroesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelHeroes-MarvelHeroesUITests.debug.xcconfig"; path = "Target Support Files/Pods-MarvelHeroes-MarvelHeroesUITests/Pods-MarvelHeroes-MarvelHeroesUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -274,6 +284,7 @@
 		905000CB25C2337A0061FD27 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				90D009BB25C776F900407A2C /* Favorite */,
 				90D0096A25C732BE00407A2C /* Detail */,
 				905000CC25C233840061FD27 /* Home */,
 			);
@@ -461,6 +472,18 @@
 			children = (
 				90D009AE25C759E700407A2C /* FavoriteRepository.swift */,
 				90D009B625C75A4D00407A2C /* FavoriteLocalRepository.swift */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
+		90D009BB25C776F900407A2C /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				90D009BC25C7770600407A2C /* FavoriteViewController.swift */,
+				90D009C425C7773300407A2C /* FavoritePresenter.swift */,
+				90D009C925C7778E00407A2C /* FavoriteRouter.swift */,
+				90D009CE25C7781B00407A2C /* FavoriteCardCollectionCell.swift */,
+				90D009D325C7797D00407A2C /* FavoriteInteractor.swift */,
 			);
 			path = Favorite;
 			sourceTree = "<group>";
@@ -705,14 +728,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90D009D425C7797D00407A2C /* FavoriteInteractor.swift in Sources */,
 				9042C42E25C2321F009C3982 /* ApplicationRouter.swift in Sources */,
 				90D0092B25C7149600407A2C /* UIImageView+SetUrl.swift in Sources */,
+				90D009C525C7773300407A2C /* FavoritePresenter.swift in Sources */,
 				9019D63125C2D03500B08511 /* HomeRouter.swift in Sources */,
+				90D009CF25C7781B00407A2C /* FavoriteCardCollectionCell.swift in Sources */,
 				90D0092125C7124000407A2C /* UIViewControler+Alert.swift in Sources */,
 				90D009AF25C759E700407A2C /* FavoriteRepository.swift in Sources */,
 				90AFDA6C25C33FDF00E3F2FA /* OrderList.swift in Sources */,
 				9019D62C25C2D02300B08511 /* HomeInteractor.swift in Sources */,
 				90AFDA5A25C33CD800E3F2FA /* CharacterRemoteRepository.swift in Sources */,
+				90D009CA25C7778E00407A2C /* FavoriteRouter.swift in Sources */,
 				90D008F925C6FFAA00407A2C /* SearchBar.swift in Sources */,
 				90AFDAF525C375F000E3F2FA /* JSONParameterEncoder.swift in Sources */,
 				90D0098125C7344200407A2C /* DetailsPresenter.swift in Sources */,
@@ -727,6 +754,7 @@
 				9019D62725C2CFE200B08511 /* Presenter.swift in Sources */,
 				90AFDAE225C3715D00E3F2FA /* NetworkConstants.swift in Sources */,
 				90AFDA5225C33CCD00E3F2FA /* CharacterRepository.swift in Sources */,
+				90D009BD25C7770600407A2C /* FavoriteViewController.swift in Sources */,
 				90AFDAD525C370AD00E3F2FA /* Network.swift in Sources */,
 				90D0092625C713C600407A2C /* Thumbnail.swift in Sources */,
 				9019D61F25C2CFC800B08511 /* Router.swift in Sources */,

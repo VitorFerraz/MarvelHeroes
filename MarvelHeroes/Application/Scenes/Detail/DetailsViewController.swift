@@ -3,7 +3,6 @@ import UIKit
 protocol DetailsViewControllerProtocol: AnyObject {
     func showCharacterDetails(viewModel: CharactersViewModel, isFavorite: Bool)
     func updateFavorite(isFavorite: Bool)
-
 }
 
 

@@ -6,7 +6,7 @@ struct ApplicationRouter {
         let tabBarController: UITabBarController        = .init()
         tabBarController.tabBar.isTranslucent           = false
         tabBarController.tabBar.unselectedItemTintColor = .lightGray
-        tabBarController.viewControllers                = [HomeRouter.viewController(repository: repository)]
+        tabBarController.viewControllers                = [HomeRouter.viewController(repository: repository), FavoriteRouter.viewController(repository: FavoriteLocalRepository())]
         tabBarController.selectedIndex                  = 0
         windows?.rootViewController                     = tabBarController
         windows?.makeKeyAndVisible()
